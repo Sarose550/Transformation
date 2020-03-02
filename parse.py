@@ -71,7 +71,7 @@ def parse_file( fname, points, transform, screen, color ):
         upshift = 2
       if(instructions[i] == "move"):
         newpoints = instructions[i+1].split()
-        matrix_mult(make_translate(int(newpoints[0]), int(newpoints[1]), int(newpoints[2]), transform))
+        matrix_mult(make_translate(int(newpoints[0]), int(newpoints[1]), int(newpoints[2])), transform)
         upshift = 2
       if(instructions[i] == "quit"):
         break
