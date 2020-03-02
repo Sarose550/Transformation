@@ -34,7 +34,6 @@ See the file script for an example of the file format
 def parse_file( fname, points, transform, screen, color ):
     finput = open(fname, 'r')
     instructions = finput.read().split("\n")
-    instructions.pop()
     i = 0
     while(i < len(instructions)):
       upshift = 1
@@ -49,8 +48,7 @@ def parse_file( fname, points, transform, screen, color ):
       if(instructions[i] == "save"):
         clear_screen(screen)
         draw_lines(points, screen, color)
-        print(instructions[i+1])
-        save_ppm(instructions[i+1])
+        save_ppm(screen, instructions[i+1])
         upshift = 2
       if(instructions[i] == "line"):
         newpoints = instructions[i+1].split()
