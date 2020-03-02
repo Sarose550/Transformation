@@ -48,7 +48,8 @@ def parse_file( fname, points, transform, screen, color ):
       if(instructions[i] == "save"):
         clear_screen(screen)
         draw_lines(points, screen, color)
-        save_ppm(screen, instructions[i+1])
+        display(screen)
+        save_extension(screen, commands[i+1])
         upshift = 2
       if(instructions[i] == "line"):
         newpoints = instructions[i+1].split()
